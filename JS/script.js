@@ -6,13 +6,22 @@ async function SearchFunc() {
         alert('Please enter a search term');
         return;
     }
+
+    const loadingScreen = document.getElementById('loadingScreen');
+    const mealContainer = document.getElementById('mealContainer');
+
+    loadingScreen.style.display = 'flex';
+    mealContainer.innerHTML = '';
+    
     
     try {
         const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
         const data = await res.json()
         
-        const mealContainer = document.getElementById('mealContainer');
-        mealContainer.innerHTML = '';
+        if (!data.meals) {
+            mealContainer.innerHTML = '<p>No meals found</p>';
+            return;
+        }
         
         data.meals.forEach((meal) => {
             const card = document.createElement('div');
@@ -33,5 +42,8 @@ async function SearchFunc() {
 
     } catch (error) {
         console.log(error)
+        mealContainer.innerHTML = '<p>Error loading meals</p>';
+    } finally {
+        loadingScreen.style.display = 'none';
     }
 }
