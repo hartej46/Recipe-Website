@@ -58,8 +58,8 @@ async function displayMeals() {
     }
 }
 
-if (window.location.pathname.includes('afterSearch.html')) {
-    document.addEventListener('DOMContentLoaded', displayMeals);  //*     
+if (window.location.pathname.includes('afterSearch.html')) {         //*
+    document.addEventListener('DOMContentLoaded', displayMeals);    //*     
 }
     
     //Used AI for error Handling and some parts and marked with *
