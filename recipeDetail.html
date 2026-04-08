@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Meal Master - Recipe Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./CSS/recipeDetail.css">
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
+                <img src="./Image/fork-and-spoon-meal-svgrepo-com.svg" alt="" height="25px">
+                <h2>Meal Master</h2>
+            </a>
+            <div class="nav-links">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link active" href="#">Discover</a>
+                <a class="nav-link" href="#">Ingredients</a>
+                <a class="nav-link" href="#">Categories</a>
+            </div>
+            <div class="nav-actions">
+                <div class="search-bar">
+                    <span class="material-symbols-outlined mr-2">search</span>
+                    <input id="searchValueInput" placeholder="Search recipes..." type="text"/>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+
+            <div id="loadingScreen" class="loadingScreen flex flex-column items-center justify-center gap-6" style="display: none;">
+                <div class="spinner"></div>
+                <p class="headline-bold">Loading your culinary masterpiece...</p>
+            </div>
+
+            <header class="hero-card" id="hero">
+                <img id="heroImage" src="" alt="" class="hero-img">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <div class="tags-container" id="tags"></div>
+                    <h1 class="meal-title" id="mealTitle"></h1>
+                    <div class="hero-badges">
+                        <div class="hero-badge">
+                            <span class="material-symbols-outlined">restaurant_menu</span>
+                            <span id="mealCategory"></span>
+                        </div>
+                        <div class="hero-badge">
+                            <span class="material-symbols-outlined">public</span>
+                            <span id="mealArea"></span>
+                        </div>
+                        <a id="youtubeLink" href="#" target="_blank" class="youtube-btn">
+                            <span class="material-symbols-outlined">play_circle</span>
+                            Watch Tutorial
+                        </a>
+                    </div>
+                </div>
+            </header>
+
+
+            <div class="split-grid" id="layout" style="display: none;">
+                <aside class="side-panel">
+                    <section class="content-card">
+                        <h2 class="card-title">
+                            <span class="material-symbols-outlined">shopping_basket</span>
+                            The Ingredients
+                        </h2>
+                        <ul class="ingredients-list" id="ingredientsList">
+                        </ul>
+                        
+                    </section>
+
+                    <
+                </aside>
+
+                <article class="main-panel">
+                    <div class="quote-wrapper">
+                        <p class="intro-quote" id="mealQuote">
+                            "Culinary wisdom is the secret ingredient in every great meal. Follow these steps to create something extraordinary."
+                        </p>
+                    </div>
+                    <div class="steps-container" id="steps">
+                    </div>
+                </article>
+            </div>
+
+            <section class="recommendations-section" id="moreLikeThis" style="display: none;">
+                <h2 class="section-title">You Might Also Crave...</h2>
+                <div class="recommendations-grid" id="recommendationsGrid">
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="brand">
+                <h2 style="font-size: 2rem;">Culinary Gallery</h2>
+            </div>
+            <div class="footer-links">
+                <a class="footer-link" href="#">About Us</a>
+                <a class="footer-link" href="#">Privacy Policy</a>
+                <a class="footer-link" href="#">Chef's Terms</a>
+                <a class="footer-link" href="#">Contact</a>
+            </div>
+            <div class="footer-copyright">
+                © 2024 Culinary Gallery. Designed for the Modern Palate.
+            </div>
+        </div>
+    </footer>
+
+    <script src="./JS/script.js"></script>
+    <script src="./JS/recipeDetail.js"></script>
+</body>
+</html>

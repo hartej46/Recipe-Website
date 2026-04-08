@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Searchpage</title>
     <link rel="stylesheet" href="./CSS/afterSearch.css">
 </head>
 <body>
@@ -40,8 +40,26 @@
                 </a>
             </div>
         </div>
+        
         <div class="leftColumn"></div>
     </nav>
+
+    <div class="layout">
+
+    <aside class="sidebar">
+        <h3>SEARCH</h3>
+        <input type="text" placeholder="Recipe name..." class="searchInput" id="afterSearchInputSection">
+
+        <h3>SORT BY</h3>
+        <div class="radioGroup">
+            <label><input type="radio" name="sort" checked> Name (Z-A)</label>
+        </div>
+
+        <h3>CUISINE</h3>
+        <ul id="cuisineList">
+            <button id="btn">All</button>
+        </ul>
+    </aside>
 
     <section id="searchResult" class="searchResult"></section> 
 
@@ -49,8 +67,7 @@
         <div class="spinner"></div>
         <p>Loading dishes...</p>
     </div>
-
-
+</div>
     <script src="./JS/script.js"></script>
 </body>
 </html>

@@ -2,51 +2,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="./CSS/index.css">
     <title>Document</title>
 </head>
 <body>
-    <nav>
-        <div class="logo">
-            <a href="#">
+   <nav class="top-nav">
+        <div class="nav-container">
+            <a href="index.html" class="brand">
                 <img src="./Image/fork-and-spoon-meal-svgrepo-com.svg" alt="" height="25px">
                 <h2>Meal Master</h2>
             </a>
-        </div>
-        <div class="middleColumn">
-            <div class="list">
-                <a href="">
-                    <img src="./Image/home-icon-silhouette-svgrepo-com.svg" alt="" height="25px">
-                    <h2>Home</h2>
-                </a>
-            </div>
-            <div class="list">
-                <a href="">
-                    <img src="./Image/discover-compass-svgrepo-com.svg" alt="" height="25px">
-                    <h2>Explore</h2>
-                </a>
-            </div>
-            <div class="list">
-                <a href="">
-                    <img src="./Image/list-svgrepo-com.svg" alt="" height="25px">
-                    <h2>Ingridents</h2>
-                </a>
-            </div>
-            <div class="list">
-                <a href="">
-                    <img src="./Image/category-svgrepo-com.svg" alt="" height="25px">
-                    <h2>Category</h2>
-                </a>
+            <div class="nav-links">
+                <a class="nav-link active" href="index.html">Home</a>
+                <a class="nav-link" href="#">Discover</a>
+                <a class="nav-link" href="#">Ingredients</a>
+                <a class="nav-link" href="#">Categories</a>
             </div>
         </div>
-        <div class="leftColumn"></div>
     </nav>
+
 
     <section class="container">
         <div class="hero">
             
             <div class="bg">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2BbQcciL_fCgE9JaUkXrokb8NH1htqsfI3HmeLh9YzcbgaOUNIJLplrTYvYaK0M5F1WtZOL3960VVdwzxF90AXuBDKnhQYJVZmGe2xqoM9jaDSzsjSS3VcLARkwFZCFoXNZa_p3Dn53tMXKoJVcR3PF90ERmYw6x58qkigEsmZrsirVfXh6fdHuNnnJ1FjJiC5iZ45pDV8z71yL30CwZSwtYT5NqFu8hPpPMpjdZXKOsqOf1phlww_gdA5st2_TDKV8lzbQqCa6Y" alt="Food Image">
+                <img id="chefsSpecialImage" src="" alt="Food Image">
                 <div class="upper"></div>
             </div>
 
@@ -55,15 +37,15 @@
                     Chef's Choice
                 </div>
 
-                <h1>
-                    Summer Citrus <br> Harvest Bowl
+                <h1 id="title">
+                   
                 </h1>
 
-                <p>
-                    "A symphony of fresh-picked greens, candied walnuts, and a zesty blood orange reduction. Elegance plated in under twenty minutes."
+                <p id="shortDescription">
+                    
                 </p>
 
-                <button class="recipeButton">
+                <button class="recipeButton" onclick="recipeDetails()">
                     View Full Recipe →
                 </button>
             </div>
@@ -78,67 +60,39 @@
                 <input id="nameOrIngridents" type="text" placeholder="Search by name or ingredient (e.g. Saffron, Salmon...)">
             </div>
 
-            <button class="explore" onclick="searchFunc()" href="./afterSearch.html">Explore</button>
+            <button class="explore" onclick="search()">Explore</button>
 
         </div>
     </section>
 
     <section class="most-loved">
-    <div class="most-loved-container">
-
-        <div class="most-loved-header">
-
-        <div>
-            <h2 class="title">Most Loved</h2>
-            <p class="subtitle">
-            Top rated by our global community of chefs.
-            </p>
+        <div class="most-loved-container">
+            <div class="most-loved-header">
+                <div>
+                    <h2 class="title">Most Loved</h2>
+                    <p class="subtitle">
+                        Top rated by our global community of chefs.
+                    </p>
+                </div>
+                <a href="#" class="view-all">
+                    View all 
+                    <span class="material-symbols-outlined" style="font-size: 16px;">open_in_new</span>
+                </a>
+            </div>
+            
+            <div id="mostLovedGrid" class="recipes-grid">
+                <!-- Dynamically populated -->
+            </div>
         </div>
+    </section>
 
-        <a href="#" class="view-all">
-            View all 
-            <span class="icon">open_in_new</span>
-        </a>
-
+    <section class="crave-section">
+        <div class="most-loved-container">
+            <h2 class="section-title">You Might Also Crave...</h2>
+            <div id="craveGrid" class="recipes-grid">
+                <!-- Dynamically populated -->
+            </div>
         </div>
-
-    </div>
-
-
-
-    <div class="recipe-card">
-
-    <div class="image-container">
-        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2lfV26fh3VHcLh1_PHb_3d8wH31HrpFiVKMCmZ1lCmqx7o-aHG6lH4iYDB0R4JYQkI9qFgIXDFPbDSDwUuS7k8BHgrCMStBdKjMzkafcoG0RH4wAhbRjaBDXKiB0yzRvdoDrpI6i6loY2ZwHXnIuGNwYdFDuDaFC9t6iAF8I5jxfHTq1tCyWsyIafOZsKsXSP9U0-K4HUgA6cIfNyA4suUVcONn8K3rNzN_CvanpeoiUKzPEPIOyaEy9Z1kvaV88xB9OsJClMvHU" alt="recipe">
-
-        <div class="rating">
-        <span class="star">★</span>
-        <span class="rating-text">4.8</span>
-        </div>
-    </div>
-
-    <div class="card-content">
-
-        <div class="tags">
-        <span class="tag">Vegan</span>
-        </div>
-
-        <h3>Honey-Glazed Autumn Roast</h3>
-
-        <div class="info">
-        <div class="info-item">
-            ⏱ 30 MINS
-        </div>
-        <div class="info-item">
-            🍽 EASY
-        </div>
-        </div>
-
-    </div>
-
-    </div>
-
-
     </section>
 
 
