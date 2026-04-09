@@ -142,7 +142,7 @@ async function loadHomeDynamicContent() {
 
     try {
         const recipes = [];
-        // Fetch 6 random recipes
+
         for (let i = 0; i < 6; i++) {
             const response = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
             const data = await response.json()
@@ -150,8 +150,6 @@ async function loadHomeDynamicContent() {
                 recipes.push(data.meals[0])
             }
         }
-
-        // Populate Most Loved (first 3)
         if (mostLovedGrid) {
             mostLovedGrid.innerHTML = ''
             recipes.slice(0, 3).forEach(meal => {
@@ -160,7 +158,6 @@ async function loadHomeDynamicContent() {
             });
         }
 
-        // Populate You Might Also Crave (next 3)
         if (craveGrid) {
             craveGrid.innerHTML = ''
             recipes.slice(3, 6).forEach(meal => {
@@ -227,4 +224,11 @@ function appliedFilter(searchValue, btnValue) {
 }
 
 
+
+function recipeDetails() {
+    const id = localStorage.getItem('id')
+    if (id) {
+        window.location.href = `./recipeDetail.html?query=${id}`;
+    }
+}
 
