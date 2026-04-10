@@ -2,7 +2,6 @@
 
 
 function searchFunc(searchInput, filter = '') {
-    // const searchInput = document.getElementById('nameOrIngridents');
     if (!searchInput) return
 
     const searchValue = searchInput.value.trim()

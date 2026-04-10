@@ -21,6 +21,46 @@ nav {
   padding: 0 40px;
 }
 
+body.dark-mode nav {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.leftColumn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.theme-toggle-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 99px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #1a1c1c;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+body.dark-mode .theme-toggle-btn {
+  background: #0a0a0a;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.theme-toggle-btn:hover {
+  background: #f1f5f9;
+  transform: translateY(-1px);
+}
+
+body.dark-mode .theme-toggle-btn:hover {
+  background: #111111;
+}
+
 .logo a {
   display: flex;
   align-items: center;
@@ -54,6 +94,10 @@ nav {
   text-decoration: none;
   color: #475569;
   transition: all 0.3s ease;
+}
+
+body.dark-mode .list a {
+  color: #cbd5e1;
 }
 
 .list a:hover {
@@ -113,6 +157,12 @@ nav {
     cursor: pointer;
 }
 
+body.dark-mode .Card {
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px -5px rgba(255, 255, 255, 0.05);
+}
+
 
 .Card:hover {
     transform: translateY(-8px);
@@ -150,6 +200,11 @@ nav {
     backdrop-filter: blur(5px);
 }
 
+body.dark-mode .category {
+  background: rgba(10, 10, 10, 0.9);
+  color: #ffffff;
+}
+
 .mealInfo {
     padding: 16px;
 }
@@ -161,10 +216,18 @@ nav {
     color: #222;
 }
 
+body.dark-mode .mealInfo h3 {
+  color: #ffffff;
+}
+
 .description {
     font-size: 14px;
     color: #666;
     line-height: 1.4;
+}
+
+body.dark-mode .description {
+  color: #94a3b8;
 }
 
 a {
@@ -181,7 +244,7 @@ a {
   padding: 40px;
 }
 
-/* ── Sidebar Redesign ───────────────────────────────────────────── */
+
 .sidebar {
   width: 320px;
   background: white;
@@ -194,6 +257,11 @@ a {
   border: 1px solid #f1f5f9;
 }
 
+body.dark-mode .sidebar {
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .sidebar h3 {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: 11px;
@@ -203,6 +271,10 @@ a {
   margin-bottom: 16px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
+}
+
+body.dark-mode .sidebar h3 {
+  color: #ab3500;
 }
 
 .sidebar h3:first-of-type {
@@ -221,6 +293,12 @@ a {
   transition: all 0.3s ease;
 }
 
+body.dark-mode .searchInput {
+  background: #000000;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
 .searchInput:focus {
   border-color: #ab3500;
   background: white;
@@ -235,6 +313,10 @@ a {
   font-size: 14px;
   font-weight: 600;
   color: #475569;
+}
+
+body.dark-mode .radioGroup {
+  color: #cbd5e1;
 }
 
 .radioGroup label {
@@ -255,7 +337,6 @@ a {
   height: 18px;
 }
 
-/* ── Cuisine Tags ───────────────────────────────────────────────── */
 #cuisineList {
   display: flex;
   flex-wrap: wrap;
@@ -277,6 +358,12 @@ a {
   transition: all 0.2s ease;
 }
 
+body.dark-mode .cuisine-btn {
+  background: #0a0a0a;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #cbd5e1;
+}
+
 .cuisine-btn:hover {
   border-color: #ab3500;
   color: #ab3500;
@@ -290,7 +377,11 @@ a {
   box-shadow: 0 4px 12px rgba(171, 53, 0, 0.2);
 }
 
-/* ── Results Grid ───────────────────────────────────────────────── */
+body.dark-mode .cuisine-btn.active, body.dark-mode .cuisine-btn:hover {
+  background: #ab3500;
+  color: #fff;
+}
+
 .searchResult {
   flex: 1;
   display: grid;

@@ -11,6 +11,11 @@ body {
   line-height: 1.6;
 }
 
+body.dark-mode {
+  background-color: #000000 !important;
+  color: #f8fafc;
+}
+
 .top-nav {
   position: fixed;
   top: 0;
@@ -20,6 +25,11 @@ body {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(0,0,0,0.05);
   box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+body.dark-mode .top-nav {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-container {
@@ -57,6 +67,10 @@ body {
   transition: all 0.3s ease;
 }
 
+body.dark-mode .nav-link {
+  color: #cbd5e1;
+}
+
 .nav-link:hover {
   color: #ab3500;
 }
@@ -73,12 +87,46 @@ body {
   gap: 1rem;
 }
 
+.theme-toggle-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 99px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #1a1c1c;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+body.dark-mode .theme-toggle-btn {
+  background: #0a0a0a;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.theme-toggle-btn:hover {
+  background: #f1f5f9;
+  transform: translateY(-1px);
+}
+
+body.dark-mode .theme-toggle-btn:hover {
+  background: #111111;
+}
+
 .search-bar {
   display: none;
   align-items: center;
   background-color: #e2e2e2;
   padding: 0.5rem 1rem;
   border-radius: 0.75rem;
+}
+
+body.dark-mode .search-bar {
+  background-color: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 @media (min-width: 1024px) {
@@ -93,6 +141,10 @@ body {
   outline: none;
   font-size: 0.875rem;
   font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body.dark-mode .search-bar input {
+  color: #ffffff;
 }
 
 .main-content {
@@ -146,6 +198,10 @@ body {
   background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
 }
 
+body.dark-mode .hero-overlay {
+  background: rgba(0, 0, 0, 0.7) !important;
+}
+
 .hero-content {
   position: absolute;
   bottom: 3rem;
@@ -174,6 +230,12 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode .tag {
+  background: rgba(10, 10, 10, 0.8);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #cbd5e1;
 }
 
 .meal-title {
@@ -271,6 +333,12 @@ body {
   position: relative;
 }
 
+body.dark-mode .content-card {
+  background-color: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+
 .card-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 800;
@@ -280,6 +348,10 @@ body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+}
+
+body.dark-mode .card-title {
+  color: #ffffff;
 }
 
 .card-title .material-symbols-outlined {
@@ -301,12 +373,21 @@ body {
   padding-bottom: 0.75rem;
 }
 
+body.dark-mode .ingredient-item {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+}
+
 .ingredient-item img {
   width: 40px;
   height: 40px;
   object-fit: contain;
   border-radius: 0.5rem;
   background-color: #f8fafc;
+}
+
+body.dark-mode .ingredient-item img {
+  background-color: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .ingredient-info {
@@ -324,6 +405,10 @@ body {
   color: #594139;
 }
 
+body.dark-mode .ingredient-measure {
+  color: #94a3b8;
+}
+
 .grocery-btn {
   width: 100%;
   margin-top: 2.5rem;
@@ -338,6 +423,10 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px -1px rgba(171, 53, 0, 0.2);
+}
+
+body.dark-mode .grocery-btn {
+  background: #ab3500 !important;
 }
 
 .grocery-btn:hover {
@@ -358,6 +447,11 @@ body {
   text-align: center;
 }
 
+body.dark-mode .nutrition-item {
+  background-color: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .nutrition-label {
   display: block;
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -369,11 +463,19 @@ body {
   margin-bottom: 0.25rem;
 }
 
+body.dark-mode .nutrition-label {
+  color: #94a3b8;
+}
+
 .nutrition-value {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
   color: #27657c;
+}
+
+body.dark-mode .nutrition-value {
+  color: #cbd5e1;
 }
 
 .intro-quote {
@@ -385,6 +487,10 @@ body {
   border-left: 4px solid #ab3500;
   padding-left: 2rem;
   margin-bottom: 3rem;
+}
+
+body.dark-mode .intro-quote {
+  color: #94a3b8;
 }
 
 @media (min-width: 768px) {
@@ -427,10 +533,18 @@ body {
   letter-spacing: -0.01em;
 }
 
+body.dark-mode .step-content h3 {
+  color: #ffffff;
+}
+
 .step-text {
   font-size: 1.25rem;
   line-height: 1.8;
   color: #1a1c1c;
+}
+
+body.dark-mode .step-text {
+  color: #cbd5e1;
 }
 
 .recommendations-section {
@@ -443,6 +557,10 @@ body {
   font-size: 2.5rem;
   letter-spacing: -0.05em;
   margin-bottom: 3rem;
+}
+
+body.dark-mode .section-title {
+  color: #ffffff;
 }
 
 .recommendations-grid {
@@ -466,6 +584,12 @@ body {
   text-decoration: none;
   color: inherit;
   display: block;
+}
+
+body.dark-mode .recommendation-card {
+  background-color: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: none;
 }
 
 .recommendation-card:hover {
@@ -505,12 +629,20 @@ body {
   color: #27657c;
 }
 
+body.dark-mode .card-category {
+  color: #cbd5e1;
+}
+
 .card-title {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 700;
   font-size: 1.5rem;
   margin-bottom: 0;
   line-height: 1.2;
+}
+
+body.dark-mode .card-title {
+  color: #ffffff;
 }
 
 .recommendation-card:hover .card-title {
@@ -527,6 +659,11 @@ body {
   font-size: 0.75rem;
   font-weight: 700;
   color: #594139;
+}
+
+body.dark-mode .card-footer {
+  border-top-color: rgba(255, 255, 255, 0.1);
+  color: #94a3b8;
 }
 
 .chefs-tray {
@@ -550,6 +687,11 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
+body.dark-mode .tray-glass {
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .tray-avatars {
   display: flex;
   margin-left: 0.75rem;
@@ -563,6 +705,11 @@ body {
   overflow: hidden;
   margin-left: -0.75rem;
   background-color: #cbd5e1;
+}
+
+body.dark-mode .tray-avatar {
+  border-color: #000;
+  background-color: #0a0a0a;
 }
 
 .tray-avatar img {
@@ -586,10 +733,18 @@ body {
   margin-left: -0.75rem;
 }
 
+body.dark-mode .tray-badge-pill {
+  border-color: #000;
+}
+
 .tray-divider {
   height: 1.5rem;
   width: 1px;
   background-color: #d1d5db;
+}
+
+body.dark-mode .tray-divider {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .tray-btn {
@@ -609,6 +764,10 @@ body {
 .tray-btn .material-symbols-outlined {
   font-size: 1.875rem;
   color: #27657c;
+}
+
+body.dark-mode .tray-btn .material-symbols-outlined {
+  color: #cbd5e1;
 }
 
 .tray-btn:hover .material-symbols-outlined {
@@ -640,6 +799,10 @@ body {
   color: #1a1c1c;
 }
 
+body.dark-mode .tray-btn-label {
+  color: #ffffff;
+}
+
 .cook-mode-btn {
   background-color: #ab3500;
   color: white;
@@ -663,6 +826,11 @@ body {
   background-color: #f1f5f9;
   padding: 4rem 0;
   border-top: 1px solid #e2e2e2;
+}
+
+body.dark-mode .footer {
+  background-color: #050505;
+  border-top-color: rgba(255, 255, 255, 0.1);
 }
 
 .footer-container {
@@ -709,3 +877,4 @@ body {
   letter-spacing: 0.1em;
   color: #94a3b8;
 }
+
